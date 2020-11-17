@@ -28,3 +28,16 @@ If you do not pass your own XMLHttpRequest object, the following header is added
 If you do not pass your own XMLHttpRequest object, request method is POST, and FormData object is not passed as data, the following header is added:
 
     Content-Type: application/x-www-form-urlencoded
+
+This example will submit a POST request with a timeout of 30000 miliseconds:
+
+    XHR("contact.php", {FromName: "john smith", FromEmail: "johnsmith@gmail.com", subject: "Contact Form", body: message_body}, 30000).then(function(xhr) {
+        if (xhr.status==200) {
+            alert("Thank you for contacting us!")
+        }
+        else {
+            return Promise.reject(xhr.status+" "+xhr.statusText);
+        }
+    }).catch(function(reason) {
+        alert("Request failed for the following reason: "+reason);
+    });
