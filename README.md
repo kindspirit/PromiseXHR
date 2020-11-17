@@ -21,10 +21,10 @@ Any parameter can be omitted. Defaults to GET request method unless data is prov
 
 Returns a Promise, fulfilled with xhr on network response. Rejected on error or timeout with reason "error" or "timeout" respectively.
 
-If you do not pass your own XMLHttpRequest object, adds header:
+If you do not pass your own XMLHttpRequest object, the following header is added:
 
     X-Requested-With: XMLHttpRequest
     
-If you do not pass your own XMLHttpRequest object, request method is POST, and FormData object is not passed as data, adds header:
+If you do not pass your own XMLHttpRequest object, request method is POST, and FormData object is not passed as data, the following header is added:
 
     Content-Type: application/x-www-form-urlencoded
