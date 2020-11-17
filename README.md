@@ -43,6 +43,6 @@ This example will submit a POST request with a timeout of 30000 miliseconds:
     });
 
 
-How to use. Put the following at the BOTTOM of your HTML just before </body>. (Must be loaded syncronously. The async and defer attributes will crash old browsers. Don't use them.)
+How to use. Put the following at the BOTTOM of your HTML just before &lt;/body&gt;. (Must be loaded syncronously. The async and defer attributes will crash old browsers. Don't use them.)
 
     <script src="promisexhr.min.js"></script>
