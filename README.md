@@ -11,7 +11,9 @@ In other words the external script load happens syncronously (which is bad) but 
 
 Usage:
 
-XHR(XMLHttpRequest [, data (object) [, timeout (number)]])
+Pass your own XMLHttpRequest object:
+XHR(XMLHttpRequest [, data (object | string) [, timeout (number)]])
+
 
 XHR(URL (string) [, data (object | string) [, timeout (number)]])
 
@@ -21,3 +23,8 @@ XHR({url: URL (string), method: request method (string), headers: headers (objec
 
 Returns a Promise, fulfilled with xhr on network response. Rejected on error or timeout with reason "error" or "timeout" respectively.
 
+Unless you use your own XHR object, adds header:
+    X-Requested-With: XMLHttpRequest
+    
+Unless you use your own XHR object, or you use a request method other than POST, or you pass a FormData as your data object, adds header:
+    Content-Type: application/x-www-form-urlencoded
