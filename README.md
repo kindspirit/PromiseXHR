@@ -25,7 +25,7 @@ If you do not pass your own XMLHttpRequest object, the following header is added
 
     X-Requested-With: XMLHttpRequest
     
-If you do not pass your own XMLHttpRequest object, request method is POST, and FormData object is not passed as data, the following header is added:
+If you do not pass your own XMLHttpRequest object, the request method is POST, and a FormData object is not passed as the data parameter, the following header is added:
 
     Content-Type: application/x-www-form-urlencoded
 
