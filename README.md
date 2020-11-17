@@ -11,13 +11,11 @@ In other words the external script load happens syncronously (which is bad) but 
 
 Usage:
 
-Pass your own XMLHttpRequest object:
-XHR(XMLHttpRequest [, data (object | string) [, timeout (number)]])
+    XHR(XMLHttpRequest [, data (object | string) [, timeout (number)]])
 
+    XHR(URL (string) [, data (object | string) [, timeout (number)]])
 
-XHR(URL (string) [, data (object | string) [, timeout (number)]])
-
-XHR({url: URL (string), method: request method (string), headers: headers (object)} [, data (object | string) [, timeout (number)]])
+    XHR({url: URL (string), method: request method (string), headers: headers (object)} [, data (object | string) [, timeout (number)]])
 
 
 
