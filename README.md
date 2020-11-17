@@ -13,7 +13,7 @@ Usage:
 
     XHR(XMLHttpRequest [, data (object | string) [, timeout (number)]])
 
-    XHR(URL (string) [, data (object | string) [, timeout (number)]])
+    XHR(URL (string) [, POST data (object | string) [, timeout (number)]])
 
     XHR({url: URL (string), method: request method (string), headers: headers (object)} [, data (object | string) [, timeout (number)]])
 
