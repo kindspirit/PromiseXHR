@@ -24,7 +24,9 @@ XHR({url: URL (string), method: request method (string), headers: headers (objec
 Returns a Promise, fulfilled with xhr on network response. Rejected on error or timeout with reason "error" or "timeout" respectively.
 
 Unless you use your own XHR object, adds header:
+
     X-Requested-With: XMLHttpRequest
     
 Unless you use your own XHR object, or you use a request method other than POST, or you pass a FormData as your data object, adds header:
+
     Content-Type: application/x-www-form-urlencoded
