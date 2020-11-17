@@ -17,7 +17,7 @@ Usage:
 
     XHR({url: URL (string), method: request method (string), headers: headers (object)} [, data (object | string) [, timeout (number)]])
 
-
+Any parameter can be omitted. Defaults to GET request method unless data is provided in which case it default to POST. If you omit the URL will substitute the URL of the current page (location.pathname+location.search)
 
 Returns a Promise, fulfilled with xhr on network response. Rejected on error or timeout with reason "error" or "timeout" respectively.
 
