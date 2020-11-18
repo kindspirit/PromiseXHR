@@ -1,6 +1,4 @@
 # PromiseXHR
-
-# PromiseXHR
 Lightweight library that combines XMLHttpRequest with JavaScript's native Promises
 
 Lightweight! Only 1.2 Kilobytes.
@@ -55,5 +53,3 @@ This example will submit a POST request with a timeout of 30000 miliseconds:
     })["catch"](function(error) {// Catch is a reserved word in Internet Explorer and must be in quotes
         alert("Request failed for the following reason: "+error.message);
     });
-
-
