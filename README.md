@@ -1,7 +1,7 @@
 # PromiseXHR
 Lightweight library that combines XMLHttpRequest with JavaScript's native Promises
 
-Lightweight! Only 1.2 Kilobytes. (1233 bytes minified)
+Lightweight! Only 1.26 Kilobytes.
 
 Old browsers make use of https://github.com/taylorhakes/promise-polyfill which loads via:
 
