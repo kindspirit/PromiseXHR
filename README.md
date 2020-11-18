@@ -1,7 +1,7 @@
 # PromiseXHR
 Lightweight XMLHttpRequest library that uses JavaScript's native Promises and works on old browsers 
 
-Lightweight! Only 1.2 Kilobytes.
+Only 1.2 Kilobytes!
 
 Works on IE6!
 
@@ -25,21 +25,23 @@ Usage:
 
     XHR(url (string) [, POST data (object | string) [, timeout (number)]])
 
-    XHR({url: URL (string), method: request method (string), headers: headers (object literal)} [, data (object | string) [, timeout (number)]])
+    XHR({url: URL (string), method: request method (string), headers: headers (object)} [, data (object | string) [, timeout (number)]])
 
 Any parameter can be omitted. The request method defaults to GET unless the data parameter is provided in which case it defaults to POST. URL defaults to the current page (location.pathname+location.search).
 
-The data parameter can be a string, an object literal containing name-value pairs (which will be converted to a string), or anything supported by <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/send">xhr.send()</a>.
+The data parameter can be a string, an object containing name-value pairs (which will be urlencoded and converted to a string), or anything supported by <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/send">xhr.send()</a>.
+
+The headers parameter if provided must be an object containing name-value pairs containing only US-ASCII characters. Header keys are converted to lowercase.
 
 Returns fulfilled Promise containing xhr object when xhr.readyState==4 (xhr.status<1 or >599 indicate network error). Rejected on timeout with object {message:"timeout"}.
 
 If you do not pass your own XMLHttpRequest object, the following header is added:
 
-    X-Requested-With: XMLHttpRequest
+    x-requested-with: XMLHttpRequest
     
 If you do not pass your own XMLHttpRequest object, the request method is POST, and a FormData object is not passed as the data parameter, the following header is added:
 
-    Content-Type: application/x-www-form-urlencoded
+    content-type: application/x-www-form-urlencoded
 
 This example will submit a POST request with a timeout of 30000 miliseconds:
 
