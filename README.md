@@ -5,7 +5,7 @@ Lightweight! Only 1.2 Kilobytes.
 
 Works on IE6! Old browsers make use of https://github.com/taylorhakes/promise-polyfill which loads via:
 
-    IF !(self.Promise)
+    IF (!self.Promise)
         document.write("<script src=https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js><\/script>"))
     }
 
