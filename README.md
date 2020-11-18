@@ -39,7 +39,7 @@ This example will submit a POST request with a timeout of 30000 miliseconds:
             return Promise.reject(xhr.status+" "+xhr.statusText);
         }
     }).catch(function(reason) {
-        alert("Request failed for the following reason: "+reason);
+        alert("Request failed for the following reason: "+reason.message);
     });
 
 
