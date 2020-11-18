@@ -3,7 +3,7 @@ Lightweight library that combines XMLHttpRequest with JavaScript's native Promis
 
 Lightweight! Only 1.26 Kilobytes.
 
-Old browsers make use of https://github.com/taylorhakes/promise-polyfill which loads via:
+Works on IE6! Old browsers make use of https://github.com/taylorhakes/promise-polyfill which loads via:
 
     self.Promise||document.write("<script src=https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js><\/script>"))
 
