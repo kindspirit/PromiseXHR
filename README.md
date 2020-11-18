@@ -21,7 +21,7 @@ Do not use async or defer attributes. This is because of the syncronous document
 
 Usage:
 
-    XHR(xhr [, data (object | string) [, timeout (number)]])
+    XHR(xhr (XMLHttpRequest) [, data (object | string) [, timeout (number)]])
 
     XHR(url (string) [, POST data (object | string) [, timeout (number)]])
 
