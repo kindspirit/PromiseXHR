@@ -1,5 +1,5 @@
 # PromiseXHR
-Lightweight library that combines XMLHttpRequest with JavaScript's native Promises
+Lightweight XMLHttpRequest library that uses JavaScript's native Promises and works on old browsers 
 
 Lightweight! Only 1.2 Kilobytes.
 
