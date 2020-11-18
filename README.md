@@ -3,9 +3,11 @@ Lightweight library that combines XMLHttpRequest with JavaScript's native Promis
 
 Lightweight! Only 1.2 Kilobytes.
 
-Works on IE6! Old browsers make use of https://github.com/taylorhakes/promise-polyfill which loads via:
+Works on IE6!
 
-    IF (!self.Promise)
+Old browsers make use of https://github.com/taylorhakes/promise-polyfill which loads via:
+
+    IF (!self.Promise) {
         document.write("<script src=https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js><\/script>"))
     }
 
@@ -19,9 +21,9 @@ Usage:
 
     XHR({url: URL (string), method: request method (string), headers: headers (object)} [, data (object | string) [, timeout (number)]])
 
-Any parameter can be omitted. Defaults to GET request method unless data is provided in which case it default to POST. If you omit the URL will substitute the URL of the current page (location.pathname+location.search)
+Any parameter can be omitted. The request method defaults to GET unless data is provided in which case it defaults to POST. URL defaults to the current page (location.pathname+location.search).
 
-Returns a Promise, fulfilled with xhr on network response. Rejected on error or timeout with reason "error" or "timeout" respectively.
+Returns fulfilled Promise containing xhr object when xhr.readyState==4 (xhr.status<1 or >599 indicate network error). Rejected on timeout with object {message:"timeout"}.
 
 If you do not pass your own XMLHttpRequest object, the following header is added:
 
@@ -38,7 +40,7 @@ This example will submit a POST request with a timeout of 30000 miliseconds:
             alert("Thank you for contacting us!")
         }
         else {
-            return Promise.reject(xhr.status+" "+xhr.statusText);
+            return Promise.reject({message: xhr.status+" "+xhr.statusText});
         }
     }).catch(function(reason) {
         alert("Request failed for the following reason: "+reason.message);
