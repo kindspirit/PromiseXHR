@@ -5,7 +5,9 @@ Lightweight! Only 1.2 Kilobytes.
 
 Works on IE6! Old browsers make use of https://github.com/taylorhakes/promise-polyfill which loads via:
 
-    self.Promise||document.write("<script src=https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js><\/script>"))
+    IF !(self.Promise)
+        document.write("<script src=https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js><\/script>"))
+    }
 
 In other words the external script load happens syncronously (which is bad) but only in the event that the Promise object isn't already defined (which is good since it is defined in all modern browsers excluding Internet Explorer.)
 
