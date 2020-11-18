@@ -11,17 +11,25 @@ Old browsers make use of https://github.com/taylorhakes/promise-polyfill which l
         document.write("<script src=https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js><\/script>"))
     }
 
-In other words the external script load happens syncronously (which is bad) but only in the event that the Promise object isn't already defined (which is good since it is defined in all modern browsers excluding Internet Explorer.)
+<h1>How to use:</h1>
+
+To support old browsers like Internet Explorer, put the following at the BOTTOM of your HTML just before &lt;/body&gt;.
+
+    <script src="promisexhr.min.js"></script>
+
+Do not use async or defer attributes. This is because of the syncronous document.write call in browsers not supporting native Promises.
 
 Usage:
 
-    XHR(XMLHttpRequest [, data (object | string) [, timeout (number)]])
+    XHR(xhr [, data (object | string) [, timeout (number)]])
 
-    XHR(URL (string) [, POST data (object | string) [, timeout (number)]])
+    XHR(url (string) [, POST data (object | string) [, timeout (number)]])
 
-    XHR({url: URL (string), method: request method (string), headers: headers (object)} [, data (object | string) [, timeout (number)]])
+    XHR({url: URL (string), method: request method (string), headers: headers (object literal)} [, data (object | string) [, timeout (number)]])
 
 Any parameter can be omitted. The request method defaults to GET unless the data parameter is provided in which case it defaults to POST. URL defaults to the current page (location.pathname+location.search).
+
+The data parameter can be a string, and object literal containing name-value pairs (which will be converted to a string), or anything supported by <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/send">xhr.send()</a>.
 
 Returns fulfilled Promise containing xhr object when xhr.readyState==4 (xhr.status<1 or >599 indicate network error). Rejected on timeout with object {message:"timeout"}.
 
@@ -46,7 +54,3 @@ This example will submit a POST request with a timeout of 30000 miliseconds:
         alert("Request failed for the following reason: "+reason.message);
     });
 
-
-How to use. Put the following at the BOTTOM of your HTML just before &lt;/body&gt;. (Must be loaded syncronously. The async and defer attributes will crash old browsers. Don't use them.)
-
-    <script src="promisexhr.min.js"></script>
