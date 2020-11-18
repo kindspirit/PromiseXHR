@@ -50,7 +50,7 @@ This example will submit a POST request with a timeout of 30000 miliseconds:
         else {
             return Promise.reject({message: xhr.status+" "+xhr.statusText});
         }
-    })["catch"](function(reason) {
+    })["catch"](function(reason) {// Catch is a reserved word in Internet Explorer and must be in quotes
         alert("Request failed for the following reason: "+reason.message);
     });
 
