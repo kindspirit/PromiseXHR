@@ -33,6 +33,8 @@ The data parameter can be a string, an object containing name-value pairs (which
 
 The headers parameter if provided must be an object containing name-value pairs containing only US-ASCII characters. Header keys are converted to lowercase.
 
+The timeout parameter must be a number containing the number of milliseconds before the promise is rejected and xhr.abort() is called. The default is 0 (no timeout).
+
 Returns fulfilled Promise containing xhr object when xhr.readyState==4 (xhr.status<1 or >599 indicate network error). Rejected on timeout with object {message:"timeout"}.
 
 If you do not pass your own XMLHttpRequest object, the following header is added:
