@@ -10,6 +10,8 @@ Old browsers make use of https://github.com/taylorhakes/promise-polyfill which l
     IF (!self.Promise) {
         document.write("<script src=https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js><\/script>"))
     }
+    
+This polyfill does not meet the standards of the specification but I haven't found a better one.
 
 <h1>How to use:</h1>
 
