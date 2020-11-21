@@ -23,11 +23,11 @@ Do not use async or defer attributes. This is because of the syncronous document
 
 Usage:
 
-    XHR(xhr (XMLHttpRequest) [, data (object | string) [, timeout (number)]])
+    promiseXHR(xhr (XMLHttpRequest) [, data (object | string) [, timeout (number)]])
 
-    XHR(url (string) [, POST data (object | string) [, timeout (number)]])
+    promiseXHR(url (string) [, POST data (object | string) [, timeout (number)]])
 
-    XHR({url: URL (string), method: request method (string), headers: headers (object)} [, data (object | string) [, timeout (number)]])
+    promiseXHR({url: URL (string), method: request method (string), headers: headers (object)} [, data (object | string) [, timeout (number)]])
 
 Any parameter can be omitted. The request method defaults to GET unless the data parameter is provided in which case it defaults to POST. URL defaults to the current page (location.pathname+location.search).
 
