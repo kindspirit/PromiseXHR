@@ -49,7 +49,7 @@ If you do not pass your own XMLHttpRequest object, the request method is POST, a
 
 This example will submit a POST request with a timeout of 30000 miliseconds:
 
-    promiseXHR("contact.php", {FromName: "john smith", FromEmail: "johnsmith@gmail.com", subject: "Contact Form", body: message_body, "cc[]":["carboncopy1@gmail.com"],"carboncopy2@gmail.com"],"carboncopy3@gmail.com"]}, 30000).then(function(xhr) {
+    promiseXHR("contact.php", {FromName: "john smith", FromEmail: "johnsmith@gmail.com", subject: "Contact Form", body: message_body, "cc[]":["carboncopy1@gmail.com","carboncopy2@gmail.com","carboncopy3@gmail.com"]}, 30000).then(function(xhr) {
         if (xhr.status==200) {
             alert("Thank you for contacting us!")
         }
