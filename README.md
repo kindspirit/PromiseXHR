@@ -37,7 +37,7 @@ The headers parameter if provided must be an object containing name-value pairs 
 
 The timeout parameter must be a number containing the number of milliseconds before the promise is rejected and xhr.abort() is called. The default is 0 (no timeout).
 
-Returns fulfilled Promise containing xhr object when xhr.readyState==4 (xhr.status<1 or >599 indicate network error). Rejected on timeout with object {message:"timeout"}.
+Returns fulfilled Promise containing xhr object when xhr.readyState==4 (xhr.status<1 or >12000 indicate network error). Rejected on timeout with object {message:"timeout"}.
 
 If you do not pass your own XMLHttpRequest object, the following header is added:
 
