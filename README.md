@@ -51,10 +51,10 @@ This example will submit a POST request with a timeout of 30000 miliseconds:
 
     promiseXHR("contact.php", {FromName: "john smith", FromEmail: "johnsmith@gmail.com", subject: "Contact Form", body: message_body, "cc[]":["carboncopy1@gmail.com","carboncopy2@gmail.com","carboncopy3@gmail.com"]}, 30000).then(function(xhr) {
         if (xhr.status==200) {
-            alert("Thank you for contacting us!")
+            alert(xhr.responseText)
         }
         else {
-            return Promise.reject({message: xhr.status+" "+xhr.statusText});
+            return Promise.reject({message: xhr.status+" "+(xhr.statusText||"error")});
         }
     })["catch"](function(error) {// Catch is a reserved word in Internet Explorer and must be in quotes
         alert("Request failed for the following reason: "+error.message);
