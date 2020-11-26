@@ -63,3 +63,5 @@ This example will submit a POST request with a timeout of 30000 miliseconds:
 Discussion:
 
 I did this mostly as an exercise. I realized that this could come in handy to someone who wanted to target newer browsers but also wanted backwards compatibility. This does that by using the ES6 Promises while falling back on a Promise polyfill that only loads if the Promise property does not exist in window which makes loading the library very fast as it is very small compared to a library like jQuery. In fact it is 1/100th the size of the latest version of jQuery.
+
+There is also a version that doesn't support IE6 which I made last minute since I realized the whole point was to slim down the size of this file for faster loading, and most web sites aren't going to work on IE6 nowadays.
