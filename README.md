@@ -33,7 +33,7 @@ Any parameter can be omitted. The request method defaults to GET unless the data
 
 The data parameter can be a string, an object containing name-value pairs (which will be urlencoded and converted to a string), or anything supported by <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/send">xhr.send()</a>.
 
-The headers parameter if provided must be an object containing name-value pairs containing only US-ASCII characters. Header keys are converted to lowercase.
+The headers parameter if provided must be an object containing name-value pairs containing only US-ASCII characters. Header keys are converted to uppercase.
 
 The timeout parameter must be a number containing the number of milliseconds before the promise is rejected and xhr.abort() is called. The default is 0 (no timeout).
 
@@ -41,11 +41,11 @@ Returns fulfilled Promise containing xhr object when xhr.readyState===4. if xhr.
 
 If you do not pass your own XMLHttpRequest object, the following header is added:
 
-    x-requested-with: XMLHttpRequest
+    X-REQUESTED-WITH: XMLHttpRequest
     
 If you do not pass your own XMLHttpRequest object, the request method is POST, and a FormData object is not passed as the data parameter, the following header is added:
 
-    content-type: application/x-www-form-urlencoded
+    CONTENT-TYPE: application/x-www-form-urlencoded
 
 This example will submit a POST request with a timeout of 30000 miliseconds:
 
@@ -59,3 +59,7 @@ This example will submit a POST request with a timeout of 30000 miliseconds:
     })["catch"](function(error) {// Catch is a reserved word in Internet Explorer and must be in quotes
         alert("Request failed for the following reason: "+error.message);
     });
+
+Discussion:
+
+I did this mostly as an exercise. I realized that this could come in handy to someone who wanted to target newer browsers but also wanted backwards compatibility. This does that by using the ES6 Promises while falling back on a Promise polyfill that only loads if the Promise property does not exist in window which makes loading the library very fast as it is very small compared to a library like jQuery. In fact it is 1/100th the size of the latest version of jQuery.
