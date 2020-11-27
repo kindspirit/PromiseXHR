@@ -31,7 +31,7 @@ Usage:
 
 Any parameter can be omitted. The request method defaults to GET unless the data parameter is provided in which case it defaults to POST. URL defaults to the current page (location.pathname+location.search).
 
-The data parameter can be a string, an object containing name-value pairs (which will be urlencoded and converted to a string), or anything supported by <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/send">xhr.send()</a>.
+The data parameter can be a string, an object containing name-value pairs (which will be urlencoded and converted to a string), or anything supported by <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/send">xhr.send()</a>. If a data parameter is provided and the request method is GET or HEAD, the name-value pairs is appended to the URL. (new Date).getTime() is also appended to the name-value pairs to prevent caching.
 
 The headers parameter if provided must be an object containing name-value pairs containing only US-ASCII characters. Header keys are converted to lowercase.
 
