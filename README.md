@@ -1,7 +1,7 @@
 # PromiseXHR
 Lightweight XMLHttpRequest library that uses JavaScript's native Promises and works on old browsers 
 
-Only 1.07 Kilobytes!
+Only 1.06 Kilobytes!
 
 Works on IE6!
 
