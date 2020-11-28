@@ -51,7 +51,7 @@ This example will submit a POST request with a timeout of 30000 miliseconds:
 
     promiseXHR("contact.php", {FromName: "john smith", FromEmail: "johnsmith@gmail.com", subject: "Contact Form", body: message_body, "cc[]":["carboncopy1@gmail.com","carboncopy2@gmail.com","carboncopy3@gmail.com"]}, 30000).then(function(xhr) {
         if (xhr.status==200) {
-            alert(xhr.getAllResponseHeaders()+"\r\n\r\n"+xhr.responseText)
+            alert(xhr.getAllResponseHeaders()+xhr.responseText)
         }
         else {
             return Promise.reject(xhr.statusText? xhr.status+" "+xhr.statusText: "error");
