@@ -64,4 +64,4 @@ Discussion:
 
 I did this mostly as an exercise. I wanted a way to make XHR requests that works on old browsers, but is also very fast loading and supports promises. This does that by using native Promises for browsers that support it, while falling back on a Promise polyfill that only loads if needed. This makes loading the library very fast as it is very small compared to a library like jQuery.
 
-There is also a version that supports IE6, but I realized the whole point was to slim down the size of this file for faster loading, and IE6 support requires an extra approximately 100 bytes.
+There is also a version that supports IE6 which only adds 101 bytes to the filesize if you need IE6 support.
